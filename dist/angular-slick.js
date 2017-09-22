@@ -288,7 +288,11 @@ angular
           element.one('$destroy', function () {
             destroy();
           });
-
+          
+          scope.$on('slick:destroyAndInit', function(){
+            destroyAndInit();
+          });
+      
           return scope.$watch('settings', function (newVal, oldVal) {
             if (newVal !== null) {
               return destroyAndInit();
